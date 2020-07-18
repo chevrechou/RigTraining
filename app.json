@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Jok",
+    "name": "Rig Training",
     "slug": "Jok",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,6 +21,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+  },
+  "homepage": "https://chevrechou.github.io/RigtTraining",
+
+  "scripts": {
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
   }
 }

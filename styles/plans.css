@@ -1,0 +1,6 @@
+.plans-view{
+  display: grid;
+  background-color: rgb(28, 224, 164);
+  grid-template-columns: 1fr 1fr;
+
+}
