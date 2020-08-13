@@ -3,24 +3,40 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 // import {createBottomTabNavigator} from 'react-navigation';
 
-export function Heading({children, style, ...props}){
+export function Desc({children, style, ...props}){
     return(
+        <View style={styles.container}>
         <Text {...props} style={[style, styles.text]}>{children}</Text>
+        </View>
       )
 
 }
 
 const styles = StyleSheet.create({
   text:{
-    marginTop: 5,
-    fontSize: 32,
+    marginTop: 25,
+    marginBottom: 25,
+    marginLeft: 25,
+    marginRight: 25,
+
+
+
+
+    fontSize: 15,
+    color:'black',
     fontWeight: '400',
     textAlign: 'center',
   },
   container: {
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    flex: 1,
+    marginTop: 15,
+    marginBottom: 15,
+    borderRadius: 15,
+    marginLeft: 25,
+    marginRight: 25,
 
+    backgroundColor: 'rgba(228, 226, 224, 0.86)',
+    alignItems: 'center',
     justifyContent: 'center',
   },
 });

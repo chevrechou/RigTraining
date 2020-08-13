@@ -21,14 +21,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-  },
-  "homepage": "https://chevrechou.github.io/RigtTraining",
-
-  "scripts": {
-   "predeploy": "npm run build",
-   "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    }
   }
 }

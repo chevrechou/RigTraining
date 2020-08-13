@@ -16,7 +16,7 @@ function WorkoutScreen({ navigation,route}) {
 
   return (
     <View style={wodstyles.container}>
-      <Heading style={wodstyles.text}>Training Videos</Heading>
+      <Heading style={wodstyles.heading}>Training Videos</Heading>
 
     <FlatList
       data={data}
@@ -114,6 +114,9 @@ const wodstyles = StyleSheet.create({
     color:'black',
     fontSize: 22,
     textAlign: 'center',
+  },
+  heading:{
+    color:'white' ,
   },
   container: {
     color:'white',

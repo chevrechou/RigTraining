@@ -22,7 +22,7 @@ function PlansScreen({ navigation,route}) {
   return (
     <NavigationContainer style={styles.container} independent={true}>
       <View style={styles.plansView}>
-      <Heading>Plans</Heading>
+      <Heading style={styles.heading}>Plans</Heading>
 
       <FlatList
         data={data}
@@ -90,6 +90,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#004893',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  heading:{
+    color:'white' ,
   },
   plansView:{
     textAlign: 'center',

@@ -8,8 +8,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Workout from './Workout';
 import { Heading } from '../components/Heading';
  import DetailedWorkout from '../plans/DetailedWorkout';
-
-
+import Swipe from '../Swipe';
+import Woddata from '../data.js';
 
 const TopTab=createMaterialTopTabNavigator();
 const HomeStack = createStackNavigator();
@@ -20,12 +20,9 @@ function HomeScreen({ navigation, route }) {
 
   return (
     <View style={ styles.container}>
-      <Heading>Functional Bodybuilding v2</Heading>
-      {/*
-        <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Workout')}
-      />*/}
+      <Heading style={styles.heading}>FUNCTIONAL BODY BUILDING V 2.0</Heading>
+
+
       <FlatList
        style={ styles.innerContainer}
       data={data}
@@ -34,13 +31,19 @@ function HomeScreen({ navigation, route }) {
           <View style={{ flex: 2, flexDirection: 'column', margin: 1 }}>
 
             <Text style={styles.text}>{item.Name}</Text>
-
+  {/*
             <Button
               title="Details"
               style={styles.button}
-              onPress={() => navigation.navigate("Workout Details", { name: item.Name})}
-            />
+              onPress={() => navigation.navigate("Workout Details", { name: item.ID,data: Woddata})}
+            />*/}
 
+
+    <Button
+     title="Details"
+     style={styles.button}
+     onPress={() => navigation.navigate("Details", { name: item.ID,data: Woddata})}
+   />
           </View>
 
         </Card>
@@ -56,15 +59,12 @@ class Home extends Component {
     super(props);
     this.state={
       wodList:[
-        {ID:1, Name:"Monday"},
-        {ID:2, Name:"Tuesday"},
+        {ID:1, Name:"Week 1"},
+        {ID:2, Name:"Week 2"},
 
-        {ID:3, Name:"Wednesday"},
-        {ID:4, Name:"Thursday"},
-        {ID:5, Name:"Friday"},
+        {ID:3, Name:"Week 3"},
+        {ID:4, Name:"Week 4"},
 
-        {ID:6, Name:"Sunday"},
-        {ID:7, Name:"Saturday"},
 
 
 
@@ -85,6 +85,7 @@ class Home extends Component {
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={HomeScreen} initialParams={{ data: this.state.wodList }} />
       <HomeStack.Screen name="Workout Details" component={DetailedWorkout} />
+      <HomeStack.Screen name="Details" component={Swipe} />
 
     </HomeStack.Navigator>
   );
@@ -107,6 +108,9 @@ const styles = StyleSheet.create({
     width:width,
     paddingTop: 25,
     backgroundColor: '#004893',
+  },
+  heading:{
+    color:'white' ,
   },
   button:{
     borderRadius: 50,
